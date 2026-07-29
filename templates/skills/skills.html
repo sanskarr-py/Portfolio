@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+
+Skills | Sanskar Acharya
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<section class="skills">
+
+
+<h1>
+My Skills
+</h1>
+
+
+<div class="skill-container">
+
+
+{% for skill in skills %}
+
+
+<div class="skill-card">
+
+
+<h2>
+{{ skill.name }}
+</h2>
+
+
+<p>
+{{ skill.category }}
+</p>
+
+
+</div>
+
+
+{% endfor %}
+
+
+</div>
+
+
+</section>
+
+
+{% endblock %}

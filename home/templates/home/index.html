@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+
+{% block title %}
+
+Sanskar Acharya | Portfolio
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<section class="hero">
+
+
+<div class="hero-text">
+
+
+<h1>
+Hi, I'm <span>Sanskar Acharya</span>
+</h1>
+
+
+<h2>
+BSc.CSIT Student | Python & Django Learner
+</h2>
+
+
+<p>
+
+I am a computer science student from Pokhara, Nepal.
+I enjoy learning programming, building projects,
+and exploring web development using Python and Django.
+
+</p>
+
+
+<div class="buttons">
+
+<a href="#" class="btn">
+View Projects
+</a>
+
+</div>
+
+
+<div class="social">
+
+<a href="#">
+GitHub
+</a>
+
+
+<a href="#">
+LinkedIn
+</a>
+
+
+<a href="#">
+Email
+</a>
+
+</div>
+
+
+</div>
+
+
+
+<div class="hero-image">
+
+
+<img src="{% static 'images/profile.jpg' %}" 
+alt="Sanskar Acharya">
+
+
+</div>
+
+
+</section>
+
+
+
+{% endblock %}
