@@ -16,98 +16,139 @@ Sanskar Acharya | Portfolio
 
 <section class="hero">
 
+    <div class="hero-content">
 
-<div class="hero-text">
+        <p class="hero-label">BSc.CSIT Student · Python & Django Learner</p>
 
+        <h1>
+            Hi, I'm
+            <span>Sanskar Acharya</span>
+        </h1>
 
-<h1>
-Hi, I'm <span>Sanskar Acharya</span>
-</h1>
+        <p class="hero-description">
+            I'm a computer science student from Pokhara, Nepal,
+            currently learning Python and Django and building
+            projects to improve my development skills.
+        </p>
 
+        <div class="hero-buttons">
 
-<h2>
-BSc.CSIT Student | Python & Django Learner
-</h2>
+            <a href="{% url 'projects' %}" class="btn primary-btn">
+                View My Projects
+            </a>
 
+            <a href="#about" class="btn secondary-btn">
+                About Me
+            </a>
 
-<p>
+        </div>
 
-I am a computer science student from Pokhara, Nepal.
-I enjoy learning programming, building projects,
-and exploring web development using Python and Django.
+        <div class="hero-socials">
 
-</p>
+            <a href="#" target="_blank">
+                GitHub
+            </a>
 
+            <a href="#" target="_blank">
+                LinkedIn
+            </a>
 
-<div class="buttons">
+            <a href="mailto:your-email@gmail.com">
+                Email
+            </a>
 
-<a href="#" class="btn">
-View Projects
-</a>
+        </div>
 
-</div>
-
-
-<div class="social">
-
-<a href="#">
-GitHub
-</a>
-
-
-<a href="#">
-LinkedIn
-</a>
-
-
-<a href="#">
-Email
-</a>
-
-</div>
+    </div>
 
 
-</div>
+    <div class="hero-image">
 
+        <div class="image-wrapper">
 
+            <img
+                src="{% static 'images/profile.jpg' %}"
+                alt="Sanskar Acharya"
+            >
 
-<div class="hero-image">
+        </div>
 
-
-<img src="{% static 'images/profile.jpg' %}" 
-alt="Sanskar Acharya">
-
-
-</div>
-
+    </div>
 
 </section>
 
 <section class="featured-projects">
 
-    <h2>Featured Projects</h2>
+    <div class="section-heading">
+        <p class="section-label">MY WORK</p>
+        <h2>Featured Projects</h2>
+        <p>
+            Some of the projects I've built while learning programming
+            and web development.
+        </p>
+    </div>
 
     <div class="projects-grid">
 
         {% for project in featured_projects %}
 
-        <div class="project-card">
+        <article class="project-card">
 
-            <h3>{{ project.title }}</h3>
+            <div class="project-card-top">
 
-            <p>{{ project.description|truncatewords:18 }}</p>
+                {% if project.image %}
+                    <img
+                        src="{{ project.image.url }}"
+                        alt="{{ project.title }}"
+                    >
+                {% else %}
+                    <div class="project-placeholder">
+                        <span>PROJECT</span>
+                    </div>
+                {% endif %}
 
-            <a href="{% url 'project_detail' project.slug %}">
-                View Details
-            </a>
+            </div>
 
-        </div>
+            <div class="project-content">
+
+                <p class="project-number">
+                    0{{ forloop.counter }}
+                </p>
+
+                <h3>{{ project.title }}</h3>
+
+                <p class="project-description">
+                    {{ project.description|truncatewords:22 }}
+                </p>
+
+                <a
+                    href="{% url 'project_detail' project.slug %}"
+                    class="project-button"
+                >
+                    View Details
+                    <span>→</span>
+                </a>
+
+            </div>
+
+        </article>
 
         {% empty %}
 
-        <p>No featured projects yet.</p>
+        <p class="no-projects">
+            No featured projects yet.
+        </p>
 
         {% endfor %}
+
+    </div>
+
+    <div class="center-btn">
+
+        <a href="{% url 'projects' %}" class="view-all-button">
+            View All Projects
+            <span>→</span>
+        </a>
 
     </div>
 

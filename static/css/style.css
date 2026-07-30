@@ -57,147 +57,163 @@ nav a{
 
 
 
-/* Hero */
+/* =========================
+   HERO SECTION
+========================= */
 
+.hero {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    padding: 80px 10%;
+}
 
-.hero{
+.hero-content {
+    max-width: 650px;
+}
 
-    min-height:85vh;
+.hero-label {
+    color: #2563eb;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+}
 
-    display:flex;
+.hero h1 {
+    font-size: clamp(42px, 6vw, 72px);
+    line-height: 1.05;
+    margin-bottom: 25px;
+    color: #0f172a;
+}
 
-    justify-content:space-between;
+.hero h1 span {
+    display: block;
+    color: #2563eb;
+}
 
-    align-items:center;
+.hero-description {
+    max-width: 600px;
+    color: #64748b;
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
 
-    padding:50px 10%;
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
 
-    gap:40px;
+.btn {
+    display: inline-block;
+    padding: 12px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
 
+.primary-btn {
+    background: #2563eb;
+    color: white;
+}
+
+.primary-btn:hover {
+    transform: translateY(-3px);
+    background: #1d4ed8;
+}
+
+.secondary-btn {
+    border: 1px solid #cbd5e1;
+    color: #0f172a;
+    background: white;
+}
+
+.secondary-btn:hover {
+    transform: translateY(-3px);
+    border-color: #2563eb;
+    color: #2563eb;
+}
+
+.hero-socials {
+    display: flex;
+    gap: 22px;
+    margin-top: 30px;
+}
+
+.hero-socials a {
+    color: #64748b;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.hero-socials a:hover {
+    color: #2563eb;
 }
 
 
+/* =========================
+   HERO IMAGE
+========================= */
 
-.hero-text{
+.hero-image {
+    flex-shrink: 0;
+}
 
-    max-width:600px;
+.image-wrapper {
+    width: 330px;
+    height: 330px;
+    border-radius: 50%;
+    padding: 8px;
+    border: 3px solid #2563eb;
+}
 
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 
-
-.hero h1{
-
-    font-size:48px;
-
-    margin-bottom:20px;
-
-}
-
-
-
-.hero h1 span{
-
-    color:#2563eb;
-
-}
-
-
-
-.hero h2{
-
-    font-size:25px;
-
-    margin-bottom:20px;
-
-}
-
-
-
-.hero p{
-
-    font-size:18px;
-
-    line-height:1.6;
-
-}
-
-
-
-/* Buttons */
-
-
-.buttons{
-
-    margin-top:30px;
-
-}
-
-
-
-.btn{
-
-    display:inline-block;
-
-    padding:12px 25px;
-
-    background:#2563eb;
-
-    color:white;
-
-    text-decoration:none;
-
-    border-radius:8px;
-
-    margin-right:15px;
-
-}
-
-
-
-.secondary{
-
-    background:#111;
-
-}
-
-
-
-/* Social */
-
-
-.social{
-
-    margin-top:30px;
-
-}
-
-
-.social a{
-
-    margin-right:20px;
-
-    text-decoration:none;
-
-    color:#2563eb;
-
-}
-
-
-
-/* Image */
-
-
-.hero-image img{
-
-    width:280px;
-
-    height:280px;
-
-    border-radius:50%;
-
-    object-fit:cover;
-
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 60px 6%;
+    }
+
+    .hero h1 span {
+        display: inline;
+    }
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-socials {
+        justify-content: center;
+    }
+
+    .image-wrapper {
+        width: 240px;
+        height: 240px;
+    }
 }
 
 
@@ -281,20 +297,300 @@ footer{
     border-radius:8px;
 }
 
-/* Featured Projects */
+/* =========================
+   FEATURED PROJECTS
+========================= */
 
-.featured-projects{
-    padding:80px 10%;
-    background:#f8f9fa;
+.featured-projects {
+    padding: 110px 8%;
+    background: #f8fafc;
 }
 
-.featured-projects h2{
-    text-align:center;
-    font-size:38px;
-    margin-bottom:50px;
+
+/* Section heading */
+
+.section-heading {
+    max-width: 700px;
+    margin: 0 auto 55px;
+    text-align: center;
 }
 
-.center-btn{
-    text-align:center;
-    margin-top:40px;
+.section-label {
+    color: #2563eb;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.section-heading h2 {
+    margin: 0 0 15px;
+
+    color: #0f172a;
+
+    font-size: clamp(36px, 5vw, 48px);
+
+    line-height: 1.1;
+}
+
+.section-heading > p:last-child {
+    color: #64748b;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    margin: 0;
+}
+
+
+/* =========================
+   PROJECT GRID
+========================= */
+
+.projects-grid {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+/* =========================
+   PROJECT CARD
+========================= */
+
+.project-card {
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    box-shadow: 0 8px 25px rgba(15, 23, 42, 0.06);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
+}
+
+
+/* =========================
+   PROJECT TOP
+========================= */
+
+.project-card-top {
+    height: 190px;
+
+    overflow: hidden;
+
+    background: #e2e8f0;
+}
+
+.project-card-top img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-card-top img {
+    transform: scale(1.05);
+}
+
+
+/* Placeholder when no image */
+
+.project-placeholder {
+    width: 100%;
+
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #dbeafe,
+            #eff6ff
+        );
+}
+
+.project-placeholder span {
+    color: #2563eb;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+
+/* =========================
+   PROJECT CONTENT
+========================= */
+
+.project-content {
+    padding: 25px;
+}
+
+.project-number {
+    color: #2563eb;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    margin-bottom: 10px;
+}
+
+.project-content h3 {
+    color: #0f172a;
+
+    font-size: 21px;
+
+    margin: 0 0 12px;
+}
+
+.project-description {
+    color: #64748b;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    min-height: 52px;
+
+    margin-bottom: 22px;
+}
+
+
+/* =========================
+   VIEW DETAILS BUTTON
+========================= */
+
+.project-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 10px 16px;
+
+    border-radius: 7px;
+
+    background: #2563eb;
+
+    color: #ffffff !important;
+
+    text-decoration: none !important;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+.project-button:hover {
+    background: #1d4ed8;
+
+    transform: translateX(3px);
+}
+
+.project-button span {
+    font-size: 17px;
+}
+
+
+/* =========================
+   VIEW ALL
+========================= */
+
+.center-btn {
+    text-align: center;
+
+    margin-top: 50px;
+}
+
+.view-all-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 13px 22px;
+
+    background: #0f172a;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+.view-all-button:hover {
+    background: #2563eb;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 900px) {
+
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .featured-projects {
+        padding: 80px 6%;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card-top {
+        height: 200px;
+    }
+
 }
