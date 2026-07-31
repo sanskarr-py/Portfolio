@@ -1,14 +1,35 @@
-/* Footer */
-
+/* =========================
+   FOOTER
+========================= */
 
 footer{
+    background:#111827;
+    color:#fff;
+    padding:18px 0;
+    margin-top:50px;
+}
 
-    background:#111;
-
-    color:white;
-
+.footer-container{
+    max-width:900px;
+    margin:auto;
     text-align:center;
+}
 
-    padding:20px;
+.footer-container h3{
+    font-size:20px;
+    font-weight:600;
+    margin-bottom:8px;
+}
 
+.footer-container small{
+    display:block;
+    color:#94A3B8;
+    font-size:13px;
+    margin-bottom:6px;
+}
+
+.footer-container p{
+    color:#CBD5E1;
+    font-size:14px;
+    margin:0;
 }
