@@ -1,35 +1,47 @@
-<nav>
+<nav class="navbar">
 
-    <div class="logo">
-        Sanskar Acharya
-    </div>
+    <a href="{% url 'home' %}" class="logo">
+        <span class="logo-box">SA</span>
+
+        <div class="logo-text">
+            <h2>Sanskar Acharya</h2>
+            <p>Python & Django Learner</p>
+        </div>
+    </a>
 
 
-    <ul>
+    <ul class="nav-links">
 
         <li>
-            <a href="/">Home</a>
+            <a href="{% url 'home' %}">
+                Home
+            </a>
         </li>
 
         <li>
-            <a href="/about/">About</a>
-        </li>
-
-
-        <li>
-            <a href="/projects/">Projects</a>
-        </li>
-
-
-        <li>
-            <a href="/contact/">Contact</a>
+            <a href="#about">
+                About
+            </a>
         </li>
 
         <li>
-            <a href="/skills/">Skills</a>
+            <a href="{% url 'skills' %}">
+                Skills
+            </a>
+        </li>
+
+        <li>
+            <a href="{% url 'projects' %}">
+                Projects
+            </a>
+        </li>
+
+        <li>
+            <a href="#contact">
+                Contact
+            </a>
         </li>
 
     </ul>
-
 
 </nav>

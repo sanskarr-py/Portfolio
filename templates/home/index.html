@@ -9,67 +9,170 @@ Sanskar Acharya | Portfolio
 
 {% endblock %}
 
-
-
 {% block content %}
 
 
 <section class="hero">
 
-    <div class="hero-content">
+    <div class="container hero-container">
 
-        <p class="hero-label">BSc.CSIT Student · Python & Django Learner</p>
+        <div class="hero-content">
 
-        <h1>
-            Hi, I'm
-            <span>Sanskar Acharya</span>
-        </h1>
+            <p class="hero-greeting">
+                👋 Hello, I'm
+            </p>
 
-        <p class="hero-description">
-            I'm a computer science student from Pokhara, Nepal,
-            currently learning Python and Django and building
-            projects to improve my development skills.
-        </p>
+            <h1>
+                Sanskar <span>Acharya</span>
+            </h1>
 
-        <div class="hero-buttons">
+            <h2>
+                BSc.CSIT Student • Python Enthusiast
+                <br>
+                Django Learner
+            </h2>
 
-            <a href="{% url 'projects' %}" class="btn primary-btn">
-                View My Projects
-            </a>
+            <p class="hero-description">
+                Building practical web applications while learning Python,
+                Django and modern backend development.
+            </p>
 
-            <a href="#about" class="btn secondary-btn">
-                About Me
-            </a>
+            <div class="hero-buttons">
+
+                <a href="{% url 'projects' %}" class="btn btn-primary">
+                    View Projects
+                </a>
+
+                <a href="#contact" class="btn btn-outline">
+                    Contact Me
+                </a>
+
+            </div>
+
+            <div class="hero-highlights">
+
+                <div class="highlight-card">
+                    <h3>4th</h3>
+                    <p>Semester</p>
+                </div>
+
+                <div class="highlight-card">
+                    <h3>Pokhara</h3>
+                    <p>Nepal</p>
+                </div>
+
+                <div class="highlight-card">
+                    <h3>Open</h3>
+                    <p>To Learning</p>
+                </div>
+
+            </div>
 
         </div>
 
-        <div class="hero-socials">
+        <div class="hero-image">
 
-            <a href="#" target="_blank">
-                GitHub
-            </a>
-
-            <a href="#" target="_blank">
-                LinkedIn
-            </a>
-
-            <a href="mailto:your-email@gmail.com">
-                Email
-            </a>
+            <img src="{% static 'images/profile.jpg' %}"
+                 alt="Sanskar Acharya">
 
         </div>
 
     </div>
 
+</section>
 
-    <div class="hero-image">
+<section class="about-section" id="about">
 
-        <div class="image-wrapper">
+    <div class="container about-container">
 
-            <img
-                src="{% static 'images/profile.jpg' %}"
-                alt="Sanskar Acharya"
-            >
+        <div class="about-image">
+            <img src="{% static 'images/profile.jpg' %}" alt="Sanskar Acharya">
+        </div>
+
+        <div class="about-content">
+
+            <p class="section-tag">About Me</p>
+
+            <h2>Learning today, building tomorrow.</h2>
+
+            <p>
+                I'm <strong>Sanskar Acharya</strong>, a BSc.CSIT student from
+                Pokhara, Nepal, currently studying in my fourth semester.
+            </p>
+
+            <p>
+                I enjoy solving problems through programming and building
+                practical projects that strengthen my understanding of
+                software development.
+            </p>
+
+            <p>
+                My current focus is Python, Django, MySQL, and improving my
+                backend development skills while continuously exploring new
+                technologies.
+            </p>
+
+            <div class="about-details">
+
+                <div class="detail">
+                    <span>🎓</span>
+                    <div>
+                        <h4>Education</h4>
+                        <p>BSc.CSIT (4th Semester)</p>
+                    </div>
+                </div>
+
+                <div class="detail">
+                    <span>📍</span>
+                    <div>
+                        <h4>Location</h4>
+                        <p>Pokhara, Nepal</p>
+                    </div>
+                </div>
+
+                <div class="detail">
+                    <span>💻</span>
+                    <div>
+                        <h4>Focus</h4>
+                        <p>Python • Django • MySQL</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="skills-section" id="skills">
+
+    <div class="container">
+
+        <p class="section-tag">Skills</p>
+
+        <h2 class="section-title">
+            Technologies I'm Learning
+        </h2>
+
+        <div class="skills-grid">
+
+            {% for skill in skills %}
+
+            <div class="skill-card">
+
+                <h3>{{ skill.name }}</h3>
+
+                <p>{{ skill.description }}</p>
+
+                <span class="skill-level">
+                    {{ skill.level }}
+                </span>
+
+            </div>
+
+            {% endfor %}
 
         </div>
 
