@@ -72,8 +72,11 @@ Sanskar Acharya | Portfolio
 
         <div class="hero-image">
 
-            <img src="{% static 'images/profile.jpg' %}"
-                 alt="Sanskar Acharya">
+          <div class="image-wrapper">
+
+               <img src="{% static 'images/profile.jpg' %}" alt="Sanskar Acharya">
+
+          </div>
 
         </div>
 
@@ -148,39 +151,35 @@ Sanskar Acharya | Portfolio
 
 <section class="skills-section" id="skills">
 
-    <div class="container">
+    <div class="section-heading">
+        <p class="section-label">MY SKILLS</p>
 
-        <p class="section-tag">Skills</p>
+        <h2>Technologies I Use</h2>
 
-        <h2 class="section-title">
-            Technologies I'm Learning
-        </h2>
+        <p class="section-subtitle">
+            Technologies and tools I'm currently learning and using to build projects.
+        </p>
+    </div>
 
-        <div class="skills-grid">
+    <div class="skills-grid">
 
-            {% for skill in skills %}
+        {% for skill in skills %}
 
-            <div class="skill-card">
+        <div class="skill-item">
 
+            <div class="skill-icon">
                 <i class="{{ skill.icon }}"></i>
-
-                <h3>{{ skill.name }}</h3>
-
-                <p>{{ skill.description }}</p>
-
-                <span class="skill-level">
-                    {{ skill.level }}
-                </span>
-
             </div>
 
-            {% empty %}
+            <h3>{{ skill.name }}</h3>
 
-            <p>No skills added yet.</p>
+        </div>
 
-             {% endfor %}
+        {% empty %}
 
-     </div>
+        <p>No skills added yet.</p>
+
+        {% endfor %}
 
     </div>
 
@@ -189,12 +188,20 @@ Sanskar Acharya | Portfolio
 <section class="featured-projects">
 
     <div class="section-heading">
-        <p class="section-label">MY WORK</p>
-        <h2>Featured Projects</h2>
-        <p>
-            Some of the projects I've built while learning programming
-            and web development.
+
+        <p class="section-label">
+            MY WORK
         </p>
+
+        <h2>
+            Featured Projects
+        </h2>
+
+        <p class="section-subtitle">
+            A collection of projects I've built while learning Python,
+            Django, web development, and problem solving.
+        </p>
+
     </div>
 
     <div class="projects-grid">
@@ -226,17 +233,34 @@ Sanskar Acharya | Portfolio
 
                 <h3>{{ project.title }}</h3>
 
+                <div class="tech-stack">
+                    <span class="tech-badge">
+                        {{ project.technologies }}
+                    </span>
+                </div>
+
                 <p class="project-description">
                     {{ project.description|truncatewords:22 }}
                 </p>
 
-                <a
-                    href="{% url 'project_detail' project.slug %}"
-                    class="project-button"
-                >
-                    View Details
-                    <span>→</span>
-                </a>
+                <div class="project-actions">
+
+                    <a
+                        href="{{ project.github_url }}"
+                        target="_blank"
+                        class="github-button"
+                    >
+                        GitHub
+                    </a>
+
+                    <a
+                        href="{% url 'project_detail' project.slug %}"
+                        class="project-button"
+                    >
+                        View Details →
+                    </a>
+
+                </div>
 
             </div>
 
@@ -263,14 +287,32 @@ Sanskar Acharya | Portfolio
 
 </section>
 
-<section class="contact-page">
+
+<section class="contact-page" id="contact">
+
+    
+{% if messages %}
+
+<div class="messages">
+
+    {% for message in messages %}
+
+        <div class="success-message">
+            {{ message }}
+        </div>
+
+    {% endfor %}
+
+</div>
+
+{% endif %}
 
     <div class="contact-wrapper">
 
         <!-- Header -->
         <div class="contact-title">
 
-            <span>04.</span>
+           
             <h1>Get In Touch</h1>
 
         </div>
@@ -351,34 +393,29 @@ Sanskar Acharya | Portfolio
 
             <div class="contact-form">
 
-                <form>
+                <form method="POST">
 
-                    <div class="row">
+                  {% csrf_token %}
 
-                        <input type="text" placeholder="Your Name">
+                 <div class="input-row">
 
-                        <input type="email" placeholder="Your Email">
+                     {{ form.name }}
 
-                    </div>
+                     {{ form.email }}
 
+                 </div>
 
-                    <input type="text" placeholder="Subject">
+                 {{ form.message }}
 
+                 <button type="submit" class="primary-btn">
 
-                    <textarea 
-                    rows="6"
-                    placeholder="Your Message"></textarea>
+                     Send Message
 
+                     <i class="fa-solid fa-paper-plane"></i>
 
-                    <button>
+                 </button>
 
-                        Send Message
-                        <i class="fa-solid fa-paper-plane"></i>
-
-                    </button>
-
-
-                </form>
+            </form>
 
             </div>
 

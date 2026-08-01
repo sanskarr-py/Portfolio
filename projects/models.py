@@ -8,23 +8,24 @@ class Project(models.Model):
 
     description = models.TextField()
 
-    # technologies = models.CharField(
-    #     max_length=255,
-    #     help_text="Example: Python, Django, MySQL"
-    # )
+    technologies = models.CharField(
+        max_length=255,
+        default="Python",
+        help_text="Example: Python, Django, SQLite"
+    )
 
     github_url = models.URLField()
 
-    # live_demo = models.URLField(
-    #     blank=True,
-    #     null=True
-    # )
+    live_demo = models.URLField(
+        blank=True,
+        null=True
+    )
 
-    # image = models.ImageField(
-    #     upload_to="projects/",
-    #     blank=True,
-    #     null=True
-    # )
+    image = models.ImageField(
+        upload_to="projects/",
+        blank=True,
+        null=True
+    )
 
     featured = models.BooleanField(default=False)
 
@@ -37,3 +38,7 @@ class Project(models.Model):
 
     def __str__(self):
         return self.title
+    
+class Technology(models.Model):
+    name = models.CharField(max_length=50)
+technologies = models.ManyToManyField(Technology)
