@@ -1,15 +1,24 @@
-window.addEventListener("scroll", function () {
+const reveals = document.querySelectorAll(".reveal");
 
-    const navbar = document.querySelector(".navbar");
+function revealSections() {
 
-    if (window.scrollY > 50) {
+    const windowHeight = window.innerHeight;
 
-        navbar.style.boxShadow = "0 8px 30px rgba(0,0,0,.08)";
+    reveals.forEach(section => {
 
-    } else {
+        const top = section.getBoundingClientRect().top;
 
-        navbar.style.boxShadow = "none";
+        if(top < windowHeight - 120){
 
-    }
+            section.classList.add("active");
 
-});
+        }
+
+    });
+
+}
+
+window.addEventListener("scroll", revealSections);
+
+revealSections();
+

@@ -1,39 +1,37 @@
 <nav class="navbar">
 
-    <a href="{% url 'home' %}" class="logo">
-        <span class="logo-box">SA</span>
+    <div class="navbar-container">
 
-        <div class="logo-text">
-            <h2>Sanskar Acharya</h2>
-            <p>Python & Django Learner</p>
+        <a href="{% url 'home' %}" class="logo">
+            <span class="logo-box">SA</span>
+
+            <div class="logo-text">
+                <h2>Sanskar Acharya</h2>
+                <p>Python & Django Learner</p>
+            </div>
+        </a>
+        <div class ="nav-right">
+            <ul class="nav-links">
+
+                <a href="{% url 'home' %}"
+                    class="{% if request.path == '/' %}active{% endif %}">
+                    Home
+                </a>
+
+                <li><a href="{% url 'home' %}#about">About</a></li>
+
+                <li><a href="{% url 'home' %}#skills">Skills</a></li>
+
+                <a href="{% url 'projects' %}"
+                    class="{% if '/projects' in request.path %}active{% endif %}">
+                    Projects
+                </a>
+
+                <li><a href="{% url 'home' %}#contact">Contact</a></li>
+
+            </ul>
+            
         </div>
-    </a>
-
-
-    <ul class="nav-links">
-
-        <li>
-            <a href="{% url 'home' %}">
-                Home
-            </a>
-        </li>
-
-        <li>
-            <a href="{% url 'home' %}#about">About</a>
-        </li>
-
-        <li>
-           <a href="{% url 'home' %}#skills">Skills</a>
-        </li>
-
-        <li>
-          <a href="{% url 'projects' %}">Projects</a>
-        </li>
-
-        <li>
-         <a href="{% url 'home' %}#contact">Contact</a>
-        </li>
-
-    </ul>
+    </div>
 
 </nav>
