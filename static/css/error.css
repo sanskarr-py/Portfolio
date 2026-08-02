@@ -1,0 +1,43 @@
+.error-page{
+
+    min-height:70vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    padding:40px;
+
+}
+
+.error-container h1{
+
+    font-size:120px;
+
+    color:#059669;
+
+    margin-bottom:10px;
+
+}
+
+.error-container h2{
+
+    font-size:36px;
+
+    margin-bottom:20px;
+
+}
+
+.error-container p{
+
+    color:#6b7280;
+
+    max-width:500px;
+
+    margin:0 auto 30px;
+
+}
