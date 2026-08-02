@@ -22,7 +22,7 @@ def home(request):
               "Your message has been sent successfully!"
            )
 
-            return redirect("home")
+            return redirect(f"{request.path}#contact")
     else:
 
         form = ContactForm()
